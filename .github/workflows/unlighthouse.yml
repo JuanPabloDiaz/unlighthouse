@@ -29,56 +29,62 @@ jobs:
           mkdir -p reports/site2
           unlighthouse-ci --site https://miguediaz.com --budget 75 --build-static --output ./reports/site2
 
-      # Site is giving an error
-      # - name: Run Unlighthouse Assertions for Site 3 - Links
-      #   run: |
-      #     mkdir -p reports/site3
-      #     unlighthouse-ci --site https://links.jpdiaz.dev/ --budget 75 --build-static --output ./reports/site3
-
-      # Site is giving an error
-      # - name: Run Unlighthouse Assertions for Site 4 - Docs
-      #   run: |
-      #     mkdir -p reports/site4
-      #     unlighthouse-ci --site https://docs.jpdiaz.dev/ --budget 75 --build-static --output ./reports/site4
-
-      # Site is giving an error
-      # - name: Run Unlighthouse Assertions for Site 5 - Colombia
-      #   run: |
-      #     mkdir -p reports/site5
-      #     unlighthouse-ci --site https://colombia.jpdiaz.dev/ --budget 75 --build-static --output ./reports/site5
-
-      # Site is giving an error
-      # - name: Run Unlighthouse Assertions for Site 6 - FreeForGeeks
-      #   run: |
-      #     mkdir -p reports/site6
-      #     unlighthouse-ci --site https://freeforgeeks.com/#/ --budget 75 --build-static --output ./reports/site6
-
       - name: Run Unlighthouse Assertions for Site 7 - FreeCodeCamp
         run: |
           mkdir -p reports/site7
           unlighthouse-ci --site https://freecodecamp.jpdiaz.dev/ --budget 55 --build-static --output ./reports/site7
-
-      # Site is giving an error
-      # - name: Run Unlighthouse Assertions for Site 8 - Landing Page
-      #   run: |
-      #     mkdir -p reports/site8
-      #     unlighthouse-ci --site https://lp.jpdiaz.dev/ --budget 75 --build-static --output ./reports/site8
-
-      - name: Run Unlighthouse Assertions for Site 9 - TalentoParaTi
-        run: |
-          mkdir -p reports/site9
-          unlighthouse-ci --site https://talentoparati.com/ --budget 75 --build-static --output ./reports/site9
 
       - name: Run Unlighthouse Assertions for Site 10 - JPShop
         run: |
           mkdir -p reports/site10
           unlighthouse-ci --site https://jpshop.jpdiaz.dev/ --budget 75 --build-static --output ./reports/site10
 
-      - name: List Reports Directory Contents
-        run: ls -la reports
+      - name: Run Unlighthouse Assertions for Site 9 - TalentoParaTi
+        run: |
+          mkdir -p reports/site9
+          unlighthouse-ci --site https://talentoparati.com/ --budget 75 --build-static --output ./reports/site9
 
       - name: Deploy
-        run: netlify deploy --dir=reports --prod --message="New Release Deploy from GitHub Actions"
+        run: netlify deploy --dir=.unlighthouse --prod --message="New Release Deploy from GitHub Actions"
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+        # Site is giving an error
+        # - name: Run Unlighthouse Assertions for Site 3 - Links
+        #   run: |
+        #     mkdir -p reports/site3
+        #     unlighthouse-ci --site https://links.jpdiaz.dev/ --budget 75 --build-static --output ./reports/site3
+
+        # Site is giving an error
+        # - name: Run Unlighthouse Assertions for Site 4 - Docs
+        #   run: |
+        #     mkdir -p reports/site4
+        #     unlighthouse-ci --site https://docs.jpdiaz.dev/ --budget 75 --build-static --output ./reports/site4
+
+        # Site is giving an error
+        # - name: Run Unlighthouse Assertions for Site 5 - Colombia
+        #   run: |
+        #     mkdir -p reports/site5
+        #     unlighthouse-ci --site https://colombia.jpdiaz.dev/ --budget 75 --build-static --output ./reports/site5
+
+        # Site is giving an error
+        # - name: Run Unlighthouse Assertions for Site 6 - FreeForGeeks
+        #   run: |
+        #     mkdir -p reports/site6
+        #     unlighthouse-ci --site https://freeforgeeks.com/#/ --budget 75 --build-static --output ./reports/site6
+
+        # Site is giving an error
+        # - name: Run Unlighthouse Assertions for Site 8 - Landing Page
+        #   run: |
+        #     mkdir -p reports/site8
+        #     unlighthouse-ci --site https://lp.jpdiaz.dev/ --budget 75 --build-static --output ./reports/site8
+
+        # - name: List Reports Directory Contents
+        #   run: ls -la reports
+
+        # - name: Deploy
+        #   run: netlify deploy --dir=reports --prod --message="New Release Deploy from GitHub Actions"
+        # env:
+        #   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        #   NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
