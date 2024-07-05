@@ -1,7 +1,12 @@
 name: Assertions and static report
 
 on:
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
+# schedule:
+#     - cron: '30 12 * * 1-5'
 
 jobs:
   Build:
@@ -19,18 +24,33 @@ jobs:
 
       - name: Run Unlighthouse Assertions for Site 1
         run: |
-          mkdir -p reports/portfolio
-          unlighthouse-ci --site https://jpdiaz.dev/ --budget 75 --build-static --output ./reports/portfolio
+          mkdir -p reports/site1
+          unlighthouse-ci --site https://jpdiaz.dev/ --budget 75 --build-static --output ./reports/site1
 
       - name: Run Unlighthouse Assertions for Site 2
         run: |
-          mkdir -p reports/client1
-          unlighthouse-ci --site https://miguediaz.com --budget 75 --build-static --output ./reports/client1
+          mkdir -p reports/site2
+          unlighthouse-ci --site https://miguediaz.com --budget 75 --build-static --output ./reports/site2
 
       # - name: Run Unlighthouse Assertions for Site 3
       #   run: |
       #     mkdir -p reports/site3
-      #     unlighthouse-ci --site https://freeforgeeks.com/#/ --budget 75 --build-static --output ./reports/site3
+      #     unlighthouse-ci --site https://links.jpdiaz.dev/ --budget 75 --build-static --output ./reports/site3
+
+      # - name: Run Unlighthouse Assertions for Site 4
+      #   run: |
+      #     mkdir -p reports/site4
+      #     unlighthouse-ci --site https://docs.jpdiaz.dev/ --budget 75 --build-static --output ./reports/site4
+
+      - name: Run Unlighthouse Assertions for Site 5
+        run: |
+          mkdir -p reports/site5
+          unlighthouse-ci --site https://colombia.jpdiaz.dev/ --budget 75 --build-static --output ./reports/site5
+
+      # - name: Run Unlighthouse Assertions for Site 6
+      #   run: |
+      #     mkdir -p reports/site6
+      #     unlighthouse-ci --site https://freeforgeeks.com/#/ --budget 75 --build-static --output ./reports/site6
 
       - name: Deploy
         run: netlify deploy --dir=.unlighthouse --prod --message="New Release Deploy from GitHub Actions"
