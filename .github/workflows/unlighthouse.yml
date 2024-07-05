@@ -50,6 +50,10 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
 
+          # This is the full workflow file with all the sites but some of them are giving an error
+          # The idea is to collect all the reports in a single directory and deploy them to Netlify
+          # Then it will access the reports from the Netlify site
+
         # Site is giving an error
         # - name: Run Unlighthouse Assertions for Site 3 - Links
         #   run: |
