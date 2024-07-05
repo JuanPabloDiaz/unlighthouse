@@ -1,6 +1,8 @@
 # unlighthouse
 
-## [Github Actions & Netlify Example](https://unlighthouse.dev/integrations/ci)
+This repo will run a workflow periodically to check the performance of multiple sites and generate a report using [unlighthouse](https://unlighthouse.dev). This report will be then deployed to a static site hosted on Netlify.
+
+## [Github Actions & Netlify Example](https://unlighthouse.dev/integrations/ci#github-actions-netlify-example)
 
 This example is for Github Actions and deploys a static client build to Netlify.
 
@@ -32,6 +34,7 @@ jobs:
 ```
 
 ### Additional steps:
+
 1. Create a project in NETLIFY
 2. Create a Personal Access Toke in NETLIFY
 3. Add the NETLIFY_SITE_ID & NETLIFY_AUTH_TOKEN to the repo secrets.

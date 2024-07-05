@@ -14,8 +14,23 @@ jobs:
       - name: Install Dependencies
         run: npm install -g @unlighthouse/cli puppeteer netlify-cli
 
-      - name: Unlighthouse assertions and client
-        run: unlighthouse-ci --site https://jpdiaz.dev/ --budget 75 --build-static
+      # - name: Unlighthouse assertions and client
+      #   run: unlighthouse-ci --site https://jpdiaz.dev/ --budget 75 --build-static
+
+      - name: Run Unlighthouse Assertions for Site 1
+        run: |
+          mkdir -p reports/portfolio
+          unlighthouse-ci --site https://jpdiaz.dev/ --budget 75 --build-static --output ./reports/portfolio
+
+      - name: Run Unlighthouse Assertions for Site 2
+        run: |
+          mkdir -p reports/client1
+          unlighthouse-ci --site https://miguediaz.com --budget 75 --build-static --output ./reports/client1
+
+      - name: Run Unlighthouse Assertions for Site 3
+        run: |
+          mkdir -p reports/site3
+          unlighthouse-ci --site https://freeforgeeks.com/#/ --budget 75 --build-static --output ./reports/site3
 
       - name: Deploy
         run: netlify deploy --dir=.unlighthouse --prod --message="New Release Deploy from GitHub Actions"
