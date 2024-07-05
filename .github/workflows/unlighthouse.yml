@@ -42,7 +42,7 @@ jobs:
       - name: Run Unlighthouse Assertions for Site 9 - TalentoParaTi
         run: |
           mkdir -p reports/site9
-          unlighthouse-ci --site https://talentoparati.com/ --budget 75 --build-static --output ./reports/site9
+          unlighthouse-ci --site https://www.talentoparati.com/ --budget 75 --build-static --output ./reports/site9
 
       - name: Deploy
         run: netlify deploy --dir=.unlighthouse --prod --message="New Release Deploy from GitHub Actions"
