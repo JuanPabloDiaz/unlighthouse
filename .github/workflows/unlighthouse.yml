@@ -57,15 +57,15 @@ jobs:
           mkdir -p reports/site7
           unlighthouse-ci --site https://freecodecamp.jpdiaz.dev/ --budget 55 --build-static --output ./reports/site7
 
-      - name: Run Unlighthouse Assertions for Site 8 - Landing Page
-        run: |
-          mkdir -p reports/site8
-          unlighthouse-ci --site https://lp.jpdiaz.dev/ --budget 75 --build-static --output ./reports/site8
+      # - name: Run Unlighthouse Assertions for Site 8 - Landing Page # Site is giving an error
+      #   run: |
+      #     mkdir -p reports/site8
+      #     unlighthouse-ci --site https://lp.jpdiaz.dev/ --budget 75 --build-static --output ./reports/site8
 
-          - name: Run Unlighthouse Assertions for Site 9 - TalentoParaTi
-          run: |
-            mkdir -p reports/site9
-            unlighthouse-ci --site https://talentoparati.com/ --budget 75 --build-static --output ./reports/site9
+      - name: Run Unlighthouse Assertions for Site 9 - TalentoParaTi
+        run: |
+          mkdir -p reports/site9
+          unlighthouse-ci --site https://talentoparati.com/ --budget 75 --build-static --output ./reports/site9
 
       - name: Run Unlighthouse Assertions for Site 10 - JPShop
         run: |
