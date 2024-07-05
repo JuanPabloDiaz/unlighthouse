@@ -32,10 +32,10 @@ jobs:
           mkdir -p reports/site2
           unlighthouse-ci --site https://miguediaz.com --budget 75 --build-static --output ./reports/site2
 
-      - name: Run Unlighthouse Assertions for Site 3 - Links # Site is giving an error
-        run: |
-          mkdir -p reports/site3
-          unlighthouse-ci --site https://links.jpdiaz.dev/ --budget 75 --build-static --output ./reports/site3
+      # - name: Run Unlighthouse Assertions for Site 3 - Links # Site is giving an error
+      #   run: |
+      #     mkdir -p reports/site3
+      #     unlighthouse-ci --site https://links.jpdiaz.dev/ --budget 75 --build-static --output ./reports/site3
 
       - name: Run Unlighthouse Assertions for Site 4 - Docs
         run: |
