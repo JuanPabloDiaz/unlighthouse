@@ -55,7 +55,7 @@ jobs:
       - name: Run Unlighthouse Assertions for Site 7 - FreeCodeCamp
         run: |
           mkdir -p reports/site7
-          unlighthouse-ci --site https://freecodecamp.jpdiaz.dev/ --budget 75 --build-static --output ./reports/site7
+          unlighthouse-ci --site https://freecodecamp.jpdiaz.dev/ --budget 55 --build-static --output ./reports/site7
 
       - name: Run Unlighthouse Assertions for Site 8 - Landing Page
         run: |
