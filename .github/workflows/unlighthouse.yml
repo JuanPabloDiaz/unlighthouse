@@ -44,6 +44,11 @@ jobs:
           mkdir -p reports/site9
           unlighthouse-ci --site https://www.talentoparati.com/ --budget 75 --build-static --output ./reports/site9
 
+      - name: Run Unlighthouse Assertions for Site 9 - Colombia
+        run: |
+          mkdir -p reports/site9
+          unlighthouse-ci --site https://colombia.jpdiaz.dev --budget 75 --build-static --output ./reports/site9
+
       - name: Deploy
         run: netlify deploy --dir=.unlighthouse --prod --message="New Release Deploy from GitHub Actions"
         env:
