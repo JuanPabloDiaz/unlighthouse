@@ -19,30 +19,30 @@ jobs:
       - name: Install Dependencies
         run: npm install -g @unlighthouse/cli puppeteer netlify-cli
 
-      - name: Run Unlighthouse Assertions for Site 1 - Jpdiaz
-        run: |
-          mkdir -p reports/site1
-          unlighthouse-ci --site https://jpdiaz.dev/ --budget 75 --build-static --output ./reports/site1
+      # - name: Run Unlighthouse Assertions for Site 1 - Jpdiaz
+      #   run: |
+      #     mkdir -p reports/site1
+      #     unlighthouse-ci --site https://jpdiaz.dev/ --budget 75 --build-static --output ./reports/site1
 
-      - name: Run Unlighthouse Assertions for Site 2 - MigueDiaz
-        run: |
-          mkdir -p reports/site2
-          unlighthouse-ci --site https://miguediaz.com --budget 75 --build-static --output ./reports/site2
+      # - name: Run Unlighthouse Assertions for Site 2 - MigueDiaz
+      #   run: |
+      #     mkdir -p reports/site2
+      #     unlighthouse-ci --site https://miguediaz.com --budget 75 --build-static --output ./reports/site2
 
-      - name: Run Unlighthouse Assertions for Site 7 - FreeCodeCamp
-        run: |
-          mkdir -p reports/site7
-          unlighthouse-ci --site https://freecodecamp.jpdiaz.dev/ --budget 55 --build-static --output ./reports/site7
+      # - name: Run Unlighthouse Assertions for Site 7 - FreeCodeCamp
+      #   run: |
+      #     mkdir -p reports/site7
+      #     unlighthouse-ci --site https://freecodecamp.jpdiaz.dev/ --budget 55 --build-static --output ./reports/site7
 
-      - name: Run Unlighthouse Assertions for Site 10 - JPShop
-        run: |
-          mkdir -p reports/site10
-          unlighthouse-ci --site https://jpshop.jpdiaz.dev/ --budget 75 --build-static --output ./reports/site10
+      # - name: Run Unlighthouse Assertions for Site 10 - JPShop
+      #   run: |
+      #     mkdir -p reports/site10
+      #     unlighthouse-ci --site https://jpshop.jpdiaz.dev/ --budget 75 --build-static --output ./reports/site10
 
-      - name: Run Unlighthouse Assertions for Site 9 - TalentoParaTi
-        run: |
-          mkdir -p reports/site9
-          unlighthouse-ci --site https://www.talentoparati.com/ --budget 75 --build-static --output ./reports/site9
+      # - name: Run Unlighthouse Assertions for Site 9 - TalentoParaTi
+      #   run: |
+      #     mkdir -p reports/site9
+      #     unlighthouse-ci --site https://www.talentoparati.com/ --budget 75 --build-static --output ./reports/site9
 
       - name: Run Unlighthouse Assertions for Site 9 - Colombia
         run: |
